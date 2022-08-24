@@ -35,3 +35,28 @@
 		</div>
 	</section>
 </template>
+
+<script>
+	import axios from 'axios'
+	export default {
+		name: "ComponentsService",
+		data() {
+			return {
+				kategoris: []
+			}
+		},
+		created() {
+			this.getKategori();
+		},
+		methods: {
+			async getKategori() {
+				try {
+					const response = await axios.get("kategori");
+					this.kategoris = response.data
+				} catch (error) {
+					console.log("Oops.. Terjadi Kesalahan");
+				}
+			}	
+		}
+	}
+</script>

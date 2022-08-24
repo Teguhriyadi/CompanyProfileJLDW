@@ -13,19 +13,19 @@
 				<div class="flex-fill mx-xl-5 mb-2">
 					<ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
 						<li class="nav-item">
-							<a class="nav-link btn-outline-primary rounded-pill px-3" href="index.html">Home</a>
+							<router-link to="/" class="nav-link btn-outline-primary rounded-pill px-3">Home</router-link>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link btn-outline-primary rounded-pill px-3" href="about.html">About</a>
+							<router-link to="/about" class="nav-link btn-outline-primary rounded-pill px-3">About</router-link>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link btn-outline-primary rounded-pill px-3" href="work.html">Work</a>
+							<router-link to="/work" class="nav-link btn-outline-primary rounded-pill px-3">Work</router-link>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link btn-outline-primary rounded-pill px-3" href="pricing.html">Pricing</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link btn-outline-primary rounded-pill px-3" href="contact.html">Contact</a>
+							<router-link to="/contact" class="nav-link btn-outline-primary rounded-pill px-3" href="contact.html">Contact</router-link>
 						</li>
 					</ul>
 				</div>

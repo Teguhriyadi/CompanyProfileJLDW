@@ -1,5 +1,13 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+    <NavbarView/>
 </template>
+
+<script>
+  import NavbarView from '@/views/partials/NavbarView.vue'
+  export default {
+    name: "AboutView",
+    components: {
+      NavbarView
+    }
+  }
+</script>
