@@ -5,11 +5,8 @@
 		<div class="container py-4">
 			<div class="row align-items-center justify-content-between">
 				<div class="contact-header col-lg-4">
-					<h1 class="h2 pb-3 text-primary">Contact</h1>
-					<h3 class="h4 regular-400">Elit, sed do eiusmod tempor</h3>
-					<p class="light-300">
-						Vector illustration is from <a rel="nofollow" href="https://storyset.com/" target="_blank">StorySet</a>.
-						Incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+					<h1 class="h2 pb-3 text-primary">Kontak</h1>
+					<p class="light-300"> Berisikan Profil Perusahaan , Kontak Perusahaan Secara Detail dan Terdapat Sebuah Form Pesan
 					</p>
 				</div>
 				<div class="contact-img col-lg-5 align-items-end col-md-4">
@@ -18,19 +15,14 @@
 			</div>
 		</div>
 	</section>
-	<!-- End Banner Hero -->
 
-
-	<!-- Start Contact -->
 	<section class="container py-5">
 
-		<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">Create success campaign with us!</h1>
-		<h2 class="col-12 col-xl-8 h4 text-left regular-400">Elit, sed do eiusmod tempor </h2>
+		<h1 class="col-12 col-xl-8 h2 text-left text-primary pt-3">
+			Ayo Sukseskan Bersama Kami!
+		</h1>
 		<p class="col-12 col-xl-8 text-left text-muted pb-5 light-300">
-			Incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices
-			gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Laboris
-			nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-			in voluptate.
+			Silahkan Hubungi Kontak di Bawah ini, apabila masih terdapat kekeliruan. Isikan Form Pesan Apabila Anda Ingin Mengirim Sebuah Komentar Terhadap Pelayanan Kami.
 		</p>
 
 		<div class="row pb-4">
@@ -77,8 +69,6 @@
 
 			</div>
 
-
-			<!-- Start Contact Form -->
 			<div class="col-lg-8 ">
 				<form class="contact-form row" @submit.prevent="saveKirimKomentar">
 
@@ -87,7 +77,7 @@
 							<input type="text" class="form-control form-control-lg light-300" id="floatingname" v-model="pesan_nama" placeholder="Nama">
 							<label for="floatingname light-300">Nama</label>
 						</div>
-					</div><!-- End Input Name -->
+					</div>
 
 					<div class="col-lg-6 mb-4">
 						<div class="form-floating">
@@ -101,28 +91,28 @@
 							<input type="text" class="form-control form-control-lg light-300" id="floatingphone" v-model="pesan_no_hp" placeholder="No. Handphone">
 							<label for="floatingphone light-300">No. Handphone</label>
 						</div>
-					</div><!-- End Input Phone -->
+					</div>
 
 					<div class="col-lg-6 mb-4">
 						<div class="form-floating">
 							<input type="text" class="form-control form-control-lg light-300" id="floatingcompany" v-model="pesan_nama_perusahaan" placeholder="Nama Perusahaan">
 							<label for="floatingcompany light-300">Nama Perusahaan</label>
 						</div>
-					</div><!-- End Input Company Name -->
+					</div>
 
 					<div class="col-12">
 						<div class="form-floating mb-4">
 							<input type="text" class="form-control form-control-lg light-300" id="floatingsubject" v-model="pesan_subjek" placeholder="Subjek">
 							<label for="floatingsubject light-300">Subjek</label>
 						</div>
-					</div><!-- End Input Subject -->
+					</div>
 
 					<div class="col-12">
 						<div class="form-floating mb-3">
 							<textarea class="form-control light-300" rows="8" placeholder="Pesan" id="floatingtextarea" v-model="pesan_teks"></textarea>
 							<label for="floatingtextarea light-300">Pesan</label>
 						</div>
-					</div><!-- End Textarea Message -->
+					</div>
 
 					<div class="col-md-12 col-12 m-auto text-end">
 						<button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Kirim Pesan</button>
