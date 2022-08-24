@@ -80,52 +80,52 @@
 
 			<!-- Start Contact Form -->
 			<div class="col-lg-8 ">
-				<form class="contact-form row" method="post" action="#" role="form">
+				<form class="contact-form row" @submit.prevent="saveKirimKomentar">
 
 					<div class="col-lg-6 mb-4">
 						<div class="form-floating">
-							<input type="text" class="form-control form-control-lg light-300" id="floatingname" name="inputname" placeholder="Name">
-							<label for="floatingname light-300">Name</label>
+							<input type="text" class="form-control form-control-lg light-300" id="floatingname" v-model="pesan_nama" placeholder="Nama">
+							<label for="floatingname light-300">Nama</label>
 						</div>
 					</div><!-- End Input Name -->
 
 					<div class="col-lg-6 mb-4">
 						<div class="form-floating">
-							<input type="text" class="form-control form-control-lg light-300" id="floatingemail" name="inputemail" placeholder="Email">
+							<input type="text" class="form-control form-control-lg light-300" id="floatingemail" v-model="pesan_email" placeholder="Email">
 							<label for="floatingemail light-300">Email</label>
 						</div>
 					</div><!-- End Input Email -->
 
 					<div class="col-lg-6 mb-4">
 						<div class="form-floating">
-							<input type="text" class="form-control form-control-lg light-300" id="floatingphone" name="inputphone" placeholder="Phone">
-							<label for="floatingphone light-300">Phone</label>
+							<input type="text" class="form-control form-control-lg light-300" id="floatingphone" v-model="pesan_no_hp" placeholder="No. Handphone">
+							<label for="floatingphone light-300">No. Handphone</label>
 						</div>
 					</div><!-- End Input Phone -->
 
 					<div class="col-lg-6 mb-4">
 						<div class="form-floating">
-							<input type="text" class="form-control form-control-lg light-300" id="floatingcompany" name="inputcompany" placeholder="Company Name">
-							<label for="floatingcompany light-300">Company Name</label>
+							<input type="text" class="form-control form-control-lg light-300" id="floatingcompany" v-model="pesan_nama_perusahaan" placeholder="Nama Perusahaan">
+							<label for="floatingcompany light-300">Nama Perusahaan</label>
 						</div>
 					</div><!-- End Input Company Name -->
 
 					<div class="col-12">
 						<div class="form-floating mb-4">
-							<input type="text" class="form-control form-control-lg light-300" id="floatingsubject" name="inputsubject" placeholder="Subject">
-							<label for="floatingsubject light-300">Subject</label>
+							<input type="text" class="form-control form-control-lg light-300" id="floatingsubject" v-model="pesan_subjek" placeholder="Subjek">
+							<label for="floatingsubject light-300">Subjek</label>
 						</div>
 					</div><!-- End Input Subject -->
 
 					<div class="col-12">
 						<div class="form-floating mb-3">
-							<textarea class="form-control light-300" rows="8" placeholder="Message" id="floatingtextarea"></textarea>
-							<label for="floatingtextarea light-300">Message</label>
+							<textarea class="form-control light-300" rows="8" placeholder="Pesan" id="floatingtextarea" v-model="pesan_teks"></textarea>
+							<label for="floatingtextarea light-300">Pesan</label>
 						</div>
 					</div><!-- End Textarea Message -->
 
 					<div class="col-md-12 col-12 m-auto text-end">
-						<button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Send Message</button>
+						<button type="submit" class="btn btn-secondary rounded-pill px-md-5 px-4 py-2 radius-0 text-light light-300">Kirim Pesan</button>
 					</div>
 
 				</form>
@@ -137,6 +137,7 @@
 </template>
 
 <script>
+	import axios from 'axios'
 	import NavbarView from '@/views/partials/NavbarView.vue'
 	import FooterView from '@/views/partials/FooterView.vue'
 	export default {
@@ -144,6 +145,33 @@
 		components: {
 			NavbarView,
 			FooterView
+		},
+		data() {
+			return {
+				pesan_nama: "",
+				pesan_email: "",
+				pesan_no_hp: "",
+				pesan_nama_perusahaan: "",
+				pesan_subjek: "",
+				pesan_teks: ""
+			}
+		},
+		methods: {
+			async saveKirimKomentar() {
+				try {
+					await axios.post("pesan", {
+						pesan_nama: this.pesan_nama,
+						pesan_email: this.pesan_email,
+						pesan_no_hp: this.pesan_no_hp,
+						pesan_nama_perusahaan: this.pesan_nama_perusahaan,
+						pesan_subjek: this.pesan_subjek,
+						pesan_teks: this.pesan_teks
+					});
+					(this.pesan_nama = ''), (this.pesan_email = ''), (this.pesan_no_hp = ''), (this.pesan_nama_perusahaan = ''), (this.pesan_subjek = ''), (this.pesan_teks = ''), this.$router.push("/contact");
+				} catch (error) {
+					console.log("Oops.. Terjadi Kesalahan");
+				}
+			}
 		}
 	}
 </script>
