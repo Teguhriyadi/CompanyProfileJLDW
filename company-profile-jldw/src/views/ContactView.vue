@@ -34,39 +34,12 @@
 							<i class='display-6 bx bx-news'></i>
 						</div>
 					</div>
-					<ul class="contact-info list-unstyled col-lg-9 col-9  light-300">
-						<li class="h5 mb-0">Media Contact</li>
-						<li class="text-muted">Mr. John Doe</li>
-						<li class="text-muted">010-020-0340</li>
+					<ul class="contact-info list-unstyled col-lg-9 col-9  light-300" v-for="profil in profils" :key="profil.id">
+						<li class="h5 mb-0">Techinal Support</li>
+						<li class="text-muted">{{ profil.profil_email }}</li>
+						<li class="text-muted">{{ profil.profil_no_hp }}</li>
 					</ul>
 				</div>
-
-				<div class="contact row mb-4">
-					<div class="contact-icon col-lg-3 col-3">
-						<div class="border py-3 mb-2 text-center border rounded text-secondary">
-							<i class='bx bx-laptop display-6' ></i>
-						</div>
-					</div>
-					<ul class="contact-info list-unstyled col-lg-9 col-9 light-300">
-						<li class="h5 mb-0">Technical Contact</li>
-						<li class="text-muted">Mr. John Stiles</li>
-						<li class="text-muted">010-020-0340</li>
-					</ul>
-				</div>
-
-				<div class="contact row mb-4">
-					<div class="contact-icon col-lg-3 col-3">
-						<div class="border py-3 mb-2 text-center border rounded text-secondary">
-							<i class='bx bx-money display-6'></i>
-						</div>
-					</div>
-					<ul class="contact-info list-unstyled col-lg-9 col-9 light-300">
-						<li class="h5 mb-0">Billing Contact</li>
-						<li class="text-muted">Mr. Richard Miles</li>
-						<li class="text-muted">010-020-0340</li>
-					</ul>
-				</div>
-
 			</div>
 
 			<div class="col-lg-8 ">
@@ -143,8 +116,12 @@
 				pesan_no_hp: "",
 				pesan_nama_perusahaan: "",
 				pesan_subjek: "",
-				pesan_teks: ""
+				pesan_teks: "",
+				profils: []
 			}
+		},
+		created() {
+			this.getKontak();
 		},
 		methods: {
 			async saveKirimKomentar() {
@@ -158,6 +135,15 @@
 						pesan_teks: this.pesan_teks
 					});
 					(this.pesan_nama = ''), (this.pesan_email = ''), (this.pesan_no_hp = ''), (this.pesan_nama_perusahaan = ''), (this.pesan_subjek = ''), (this.pesan_teks = ''), this.$router.push("/contact");
+				} catch (error) {
+					console.log("Oops.. Terjadi Kesalahan");
+				}
+			},
+
+			async getKontak() {
+				try {
+					const response = await axios.get("profil_perusahaan");
+					this.profils = response.data;
 				} catch (error) {
 					console.log("Oops.. Terjadi Kesalahan");
 				}
