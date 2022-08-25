@@ -16,7 +16,9 @@
 					<i class='display-1 bx bxs-box bx-lg'></i>
 				</div>
 				<div class="col-lg-7 col-12 text-light pt-2">
-					<h3 class="h4 light-300">Great transformations successful</h3>
+					<h3 class="h4 light-300">
+						Transformasi Berhasil
+					</h3>
 					<p class="light-300">Quis ipsum suspendisse ultrices gravida.</p>
 				</div>
 				<div class="col-lg-3 col-12 pt-4">

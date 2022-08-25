@@ -1,10 +1,10 @@
 <template>
 	<nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
-		<div class="container d-flex justify-content-between align-items-center">
-			<a class="navbar-brand h1" href="index.html">
+		<div class="container d-flex justify-content-between align-items-center" v-for="profil in profils" :key="profil.id">
+			<router-link to="/" class="navbar-brand h1">
 				<i class='bx bx-buildings bx-sm text-dark'></i>
-				<span class="text-dark h4">Cidhayu</span> <span class="text-primary h4">Brenchmarking</span>
-			</a>
+				<span class="text-dark h4">{{ profil.profil_nama }}</span> 
+			</router-link>
 			<button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -30,11 +30,36 @@
 					</ul>
 				</div>
 				<div class="navbar align-self-center d-flex">
-					<a class="nav-link" href="#"><i class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a>
-					<a class="nav-link" href="#"><i class='bx bx-cog bx-sm text-primary'></i></a>
-					<a class="nav-link" href="#"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
+					<a class="nav-link" href="#">
+						<i class='bx bx-user-circle bx-sm text-primary'></i>
+					</a>
 				</div>
 			</div>
 		</div>
 	</nav>
 </template>
+
+<script type="text/javascript">
+	import axios from 'axios'
+	export default {
+		name: "ViewNavbar",
+		data() {
+			return {
+				profils: []
+			}
+		},
+		created() {
+			this.getProfil();
+		},
+		methods: {
+			async getProfil() {
+				try {
+					const response = await axios.get("profil_perusahaan");
+					this.profils = response.data;
+				} catch (error) {
+					console.log("Oops.. Terjadi Kesalahan");
+				}
+			}
+		}
+	}
+</script>

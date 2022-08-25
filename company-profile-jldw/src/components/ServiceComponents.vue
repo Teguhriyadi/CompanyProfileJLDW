@@ -9,11 +9,13 @@
 					<i class='bx bx-gift h3 mt-1'></i>
 				</div>
 				<div class="service-heading col-10 col-lg-9 text-start float-end light-300">
-					<h2 class="h3 pb-4 typo-space-line">Make Success for future</h2>
+					<h2 class="h3 pb-4 typo-space-line">
+						Mari Kita Sukseskan
+					</h2>
 				</div>
 			</div>
 			<p class="service-footer col-10 offset-2 col-lg-9 offset-lg-3 text-start pb-3 text-muted px-2">
-				You are free to use this template for your commercial or business websites. You are not allowed to re-distribute this template ZIP file on any template collection websites. It is too easy to illegally copy and repost this template.
+				Dibawah Ini Terdapat Beberapa Jasa Yang Kami Tawarkan Kepada Pihak Customer. Silahkan Pilih Jasa Yang Customer Inginkan Agar Bisa Berlangganan Dengan Kami.
 			</p>
 		</div>
 
