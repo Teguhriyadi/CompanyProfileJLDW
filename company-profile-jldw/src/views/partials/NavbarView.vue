@@ -29,11 +29,6 @@
 						</li>
 					</ul>
 				</div>
-				<div class="navbar align-self-center d-flex">
-					<a class="nav-link" href="#">
-						<i class='bx bx-user-circle bx-sm text-primary'></i>
-					</a>
-				</div>
 			</div>
 		</div>
 	</nav>

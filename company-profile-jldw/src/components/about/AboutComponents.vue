@@ -30,7 +30,7 @@
 
             <div class="col-lg-9 row">
                 <div class="team-member col-md-4" v-for="team in teams" :key="team.id">
-                    <img class="team-member-img img-fluid rounded-circle p-4" src="@/assets/img/team-02.jpg" alt="Card image">
+                    <img class="team-member-img img-fluid rounded-circle p-4" :src="team.team_foto" alt="Card image">
                     <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
                         <li>{{ team.team_nama }}</li>
                         <li>{{ team.team_jabatan }}</li>
@@ -47,26 +47,12 @@
         <div class="container py-5">
             <h2 class="h2 text-white text-center py-5">Partner Kami</h2>
             <div class="row text-center">
-                <div class="col-md-3 mb-3">
-                    <div class="card partner-wap py-5">
-                        <img src="  @/assets/logo.png">
+                <div class="col-md-3 mb-3" v-for="partner in partners" :key="partner.id">
+                    <div class="card partner-wap">
+                        <img :src="partner.partner_logo">
                     </div>
                 </div>
-                <div class="col-md-3 mb-3">
-                    <div class="card partner-wap py-5">
-                        <a href="#"><i class='display-1 bx text-white bxs-check-shield bx-lg'></i></a>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <div class="card partner-wap py-5">
-                        <a href="#"><i class='display-1 text-white bx bxs-bolt-circle'></i></a>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <div class="card partner-wap py-5">
-                        <a href="#"><i class='display-1 text-white bx bxs-spa'></i></a>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -129,25 +115,6 @@
             </div>
         </div>
     </section>
-    <!-- End Aim -->
-
-    <!-- Start Contact -->
-    <section class="banner-bg bg-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mx-auto my-4 p-3">
-                    <form action="#" method="get"><h1 class="h2 text-center">Stay up to date with us</h1>
-                    <div class="input-group py-3">
-                    
-                        <input name="email" type="text" class="form-control form-control-lg rounded-pill rounded-end" id="email" placeholder="Your Email" aria-label="Your Email">
-                        <button class="btn btn-secondary text-white btn-lg rounded-pill rounded-start px-lg-4" type="submit">Subsribe</button>
-                    </div>
-                    <p class="text-center light-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua.</p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
 </template>
 
 <script type="text/javascript">
@@ -156,11 +123,13 @@
 		name: "ComponentsAbout",
         data() {
             return {
-                teams: []
+                teams: [],
+                partners: []
             }
         },
         created() {
             this.getTeam();
+            this.getPartner();
         },
         methods: {
             async getTeam() {
@@ -168,6 +137,15 @@
                     const response = await axios.get("team");
                     this.teams = response.data;
                 } catch (error) {
+                    console.log("Oops.. Terjadi Kesalahan");
+                }
+            },
+
+            async getPartner() {
+                try {
+                    const response = await axios.get("partner");
+                    this.partners = response.data;
+                } catch (error) {   
                     console.log("Oops.. Terjadi Kesalahan");
                 }
             }

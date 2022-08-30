@@ -3,14 +3,15 @@
 		<div class="container">
 			<div class="row py-4">
 
-				<div class="col-lg-3 col-12 align-left">
+				<div class="col-lg-3 col-12 align-left" v-for="profil in profils" :key="profil.id">
 					<a class="navbar-brand" href="index.html">
 						<i class='bx bx-buildings bx-sm text-light'></i>
-						<span class="text-light h5">Purple</span> <span class="text-light h5 semi-bold-600">Buzz</span>
+						<span class="text-light h5">
+							{{ profil.profil_nama }}
+						</span>
 					</a>
 					<p class="text-light my-lg-4 my-2">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-						sed do eiusmod tempor incididunt ut.
+						{{ profil.profil_deskripsi }}
 					</p>
 					<ul class="list-inline footer-icons light-300">
 						<li class="list-inline-item m-0">
