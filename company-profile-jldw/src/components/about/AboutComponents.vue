@@ -84,9 +84,11 @@
                     <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-secondary shadow-lg">
                         <i class="display-4 bx bxs-bulb text-light"></i>
                     </div>
-                    <h2 class="objective-heading h3 mb-2 mb-sm-4 light-300">Our Vision</h2>
-                    <p class="light-300">
-                        Incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse commodo viverra.
+                    <h2 class="objective-heading h3 mb-2 mb-sm-4 light-300">
+                        Visi
+                    </h2>
+                    <p class="light-300" v-for="target in targets" :key="target.id">
+                        {{ target.visi }}
                     </p>
                 </div>
 
@@ -94,10 +96,11 @@
                     <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-secondary shadow-lg">
                         <i class='display-4 bx bx-revision text-light'></i>
                     </div>
-                    <h2 class="objective-heading h3 mb-2 mb-sm-4 light-300">Our Mission</h2>
-                    <p class="light-300">
-                        Eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam quis.
+                    <h2 class="objective-heading h3 mb-2 mb-sm-4 light-300">
+                        Misi
+                    </h2>
+                    <p class="light-300" v-for="target in targets" :key="target.id">
+                        {{ target.misi }}
                     </p>
                 </div>
 
@@ -106,9 +109,8 @@
                         <i class="display-4 bx bxs-select-multiple text-light"></i>
                     </div>
                     <h2 class="objective-heading h3 mb-2 mb-sm-4 light-300">Our Goal</h2>
-                    <p class="light-300">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor.
+                    <p class="light-300" v-for="target in targets" :key="target.id">
+                        {{ target.goal }}
                     </p>
                 </div>
 
@@ -124,12 +126,14 @@
         data() {
             return {
                 teams: [],
-                partners: []
+                partners: [],
+                targets: []
             }
         },
         created() {
             this.getTeam();
             this.getPartner();
+            this.getTarget();
         },
         methods: {
             async getTeam() {
@@ -148,7 +152,17 @@
                 } catch (error) {   
                     console.log("Oops.. Terjadi Kesalahan");
                 }
+            },
+
+            async getTarget() {
+                try {
+                    const response = await axios.get("target");
+                    this.targets = response.data;
+                } catch (error) {
+                    console.log("Oops.. Terjadi Kesalahan");
+                }
             }
+
         }
 	}
 </script>
