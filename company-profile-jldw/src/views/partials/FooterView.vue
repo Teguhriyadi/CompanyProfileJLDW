@@ -13,56 +13,32 @@
 					<p class="text-light my-lg-4 my-2">
 						{{ profil.profil_deskripsi }}
 					</p>
-					<ul class="list-inline footer-icons light-300">
-						<li class="list-inline-item m-0">
-							<a class="text-light" target="_blank" href="http://facebook.com/">
-								<i class='bx bxl-facebook-square bx-md'></i>
-							</a>
-						</li>
-						<li class="list-inline-item m-0">
-							<a class="text-light" target="_blank" href="https://www.linkedin.com/">
-								<i class='bx bxl-linkedin-square bx-md'></i>
-							</a>
-						</li>
-						<li class="list-inline-item m-0">
-							<a class="text-light" target="_blank" href="https://www.whatsapp.com/">
-								<i class='bx bxl-whatsapp-square bx-md'></i>
-							</a>
-						</li>
-						<li class="list-inline-item m-0">
-							<a class="text-light" target="_blank" href="https://www.flickr.com/">
-								<i class='bx bxl-flickr-square bx-md'></i>
-							</a>
-						</li>
-						<li class="list-inline-item m-0">
-							<a class="text-light" target="_blank" href="https://www.medium.com/">
-								<i class='bx bxl-medium-square bx-md' ></i>
-							</a>
-						</li>
-					</ul>
 				</div>
 
 				<div class="col-lg-3 col-md-4 my-sm-0 mt-4">
-					<h3 class="h4 pb-lg-3 text-light light-300">Our Company</h3>
+					<h3 class="h4 pb-lg-3 text-light light-300">
+						Tentang Perusahaan
+					</h3>
 					<ul class="list-unstyled text-light light-300">
 						<li class="pb-2">
 							<i class='bx-fw bx bxs-chevron-right bx-xs'></i>
-							<a class="text-decoration-none text-light" href="index.html">Home</a>
+							<router-link class="text-decoration-none text-light" to="/">Home</router-link>
 						</li>
 						<li class="pb-2">
 							<i class='bx-fw bx bxs-chevron-right bx-xs'></i>
-							<a class="text-decoration-none text-light py-1" href="about.html">About Us</a>
+							<router-link class="text-decoration-none text-light py-1" to="/about">About Us</router-link>
 						</li>
 						<li class="pb-2">
 							<i class='bx-fw bx bxs-chevron-right bx-xs'></i>
-							<a class="text-decoration-none text-light py-1" href="work.html">Work</a>
+							<router-link class="text-decoration-none text-light py-1" to="/work">Work</router-link>
 						</li>
 						<li class="pb-2">
 							<i class='bx-fw bx bxs-chevron-right bx-xs'></i>
 							<a class="text-decoration-none text-light py-1" href="pricing.html">Price</a>
 						</li>
 						<li class="pb-2">
-							<i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" href="contact.html">Contact</a>
+							<i class='bx-fw bx bxs-chevron-right bx-xs'></i>
+							<router-link class="text-decoration-none text-light py-1" to="/contact">Contact</router-link>
 						</li>
 					</ul>
 				</div>

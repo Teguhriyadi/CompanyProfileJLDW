@@ -3,9 +3,11 @@
         <div class="container">
             <div class="row d-flex align-items-center py-5">
                 <div class="col-lg-6 text-start">
-                    <h1 class="h2 py-5 text-primary typo-space-line">About Us</h1>
+                    <h1 class="h2 py-5 text-primary typo-space-line">
+                        Tentang Kami
+                    </h1>
                     <p class="light-300">
-                        Vector illustration credit goes to <a rel="nofollow" href="http://freepik.com/" target="_blank">FreePik</a> website. Purple Buzz is provided by TemplateMo. Lorem ipsum dolor sit amet, consectetur.
+                        Pada halaman ini terdapat gambaran perusahaan yang terdiri dari tampilan <b>Team, Partner dan Alasan Memilih Kami</b>
                     </p>
                 </div>
                 <div class="col-lg-6">
